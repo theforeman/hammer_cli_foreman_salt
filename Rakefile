@@ -1,10 +1,10 @@
 require 'bundler/gem_tasks'
 
 namespace :gettext do
-  desc "Update pot file"
+  desc 'Update pot file'
   task :find do
-    require "hammer_cli_foreman_bootdisk/version"
-    require "hammer_cli_foreman_bootdisk/i18n"
+    require 'hammer_cli_foreman_bootdisk/version'
+    require 'hammer_cli_foreman_bootdisk/i18n'
     require 'gettext/tools'
 
     domain = HammerCLIForemanBootdisk::I18n::LocaleDomain.new
