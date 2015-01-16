@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary       = 'Foreman Salt-related commands for Hammer'
   s.description   = 'Foreman Salt-related commands for Hammer CLI'
 
-  s.files            = Dir['{lib,locale}/**/*', 'README*']
+  s.files            = Dir['{config,lib,locale}/**/*', 'README*']
   s.extra_rdoc_files = Dir['README*']
   s.require_paths = ['lib']
 
