@@ -9,8 +9,8 @@ module HammerCLIForemanSalt
       output do
         field :id, _('ID')
         field :name, _('Name')
-        field :salt_master, _('Salt Master')
-        field :salt_environment_id, _('Salt Environment ID')
+        field :salt_proxy_name, _('Salt Master')
+        field :salt_environment_name, _('Salt Environment')
       end
 
       build_options
@@ -20,8 +20,8 @@ module HammerCLIForemanSalt
       output do
         field :id, _('ID')
         field :name, _('Name')
-        field :salt_master, _('Salt Master')
-        field :salt_environment_id, _('Salt Environment ID')
+        field :salt_proxy_name, _('Salt Master')
+        field :salt_environment_name, _('Salt Environment')
         collection :salt_states, _('Salt States'), :hide_blank => true do
           field :id, _('ID')
           field :name, _('Name')
