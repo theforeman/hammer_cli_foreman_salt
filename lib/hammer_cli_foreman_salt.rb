@@ -6,4 +6,5 @@ module HammerCLIForemanSalt
   require 'hammer_cli_foreman_salt/salt_key'
   require 'hammer_cli_foreman_salt/salt_minion'
   require 'hammer_cli_foreman_salt/salt_state'
+  require 'hammer_cli_foreman_salt/version'
 end
