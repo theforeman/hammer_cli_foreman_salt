@@ -1,4 +1,6 @@
-require File.expand_path('../lib/hammer_cli_foreman_salt/version', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'hammer_cli_foreman_salt/version'
 
 Gem::Specification.new do |s|
   s.name          = 'hammer_cli_foreman_salt'
@@ -7,15 +9,13 @@ Gem::Specification.new do |s|
   s.authors       = ['Stephen Benjamin']
   s.email         = 'stephen@redhat.com'
   s.homepage      = 'http://github.com/theforeman/hammer_cli_foreman_salt'
-  s.license       = 'GPL v3+'
+  s.license       = 'GPL-3.0'
 
-  s.summary       = 'Foreman Salt-related commands for Hammer'
-  s.description   = 'Foreman Salt-related commands for Hammer CLI'
+  s.summary       = 'Foreman Salt-related commands for Hammer CLI'
 
   s.files            = Dir['{config,lib,locale}/**/*', 'README*']
   s.extra_rdoc_files = Dir['README*']
   s.require_paths = ['lib']
 
-  s.add_dependency 'hammer_cli_foreman', '>= 0.1.2'
-
+  s.add_dependency 'hammer_cli_foreman', '>= 2.0.0', '< 4.0.0'
 end
