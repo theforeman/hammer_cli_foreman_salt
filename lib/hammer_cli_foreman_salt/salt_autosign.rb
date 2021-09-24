@@ -27,6 +27,16 @@ module HammerCLIForemanSalt
       build_options
     end
 
+    class AuthCommand < HammerCLIForeman::Command
+      action :auth
+      command_name 'auth'
+
+      success_message _('Salt authentication status successfully changed')
+      failure_message _('Salt authentication status change failed')
+
+      build_options
+    end
+
     autoload_subcommands
   end
 
