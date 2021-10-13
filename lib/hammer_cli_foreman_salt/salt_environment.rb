@@ -14,6 +14,14 @@ module HammerCLIForemanSalt
       build_options
     end
 
+    class InfoCommand < HammerCLIForeman::InfoCommand
+      output SaltEnvironment::ListCommand.output_definition do
+        HammerCLIForeman::References.timestamps(self)
+      end
+
+      build_options
+    end
+
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _('Salt Environment created')
       failure_message _('Could not create the Salt Environment')
