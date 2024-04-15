@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hammer_cli'
 require 'hammer_cli_foreman'
 
@@ -27,7 +29,6 @@ module HammerCLIForemanSalt
       build_options
     end
 
-
     class CreateCommand < HammerCLIForeman::CreateCommand
       success_message _('Salt Variable created')
       failure_message _('Could not create the Salt Variable')
@@ -49,7 +50,7 @@ module HammerCLIForemanSalt
       # remove --new-* commands
       def self.create_option_builder
         builder = super
-        builder.builders.delete_if { |b| b.class == HammerCLIForeman::SearchablesUpdateOptionBuilder }
+        builder.builders.delete_if { |b| b.instance_of?(HammerCLIForeman::SearchablesUpdateOptionBuilder) }
         builder
       end
 

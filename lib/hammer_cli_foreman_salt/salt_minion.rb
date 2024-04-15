@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hammer_cli'
 require 'hammer_cli_foreman'
 
@@ -22,7 +24,7 @@ module HammerCLIForemanSalt
         field :name, _('Name')
         field :salt_proxy_name, _('Salt Master')
         field :salt_environment_name, _('Salt Environment')
-        collection :salt_states, _('Salt States'), :hide_blank => true do
+        collection :salt_states, _('Salt States'), hide_blank: true do
           field :id, _('ID')
           field :name, _('Name')
         end
