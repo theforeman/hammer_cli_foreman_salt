@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'hammer_cli'
 require 'hammer_cli_foreman'
 
@@ -17,7 +19,7 @@ module HammerCLIForemanSalt
       # remove --name command
       def self.create_option_builder
         builder = super
-        builder.builders.delete_if { |b| b.class == HammerCLIForeman::SearchablesOptionBuilder }
+        builder.builders.delete_if { |b| b.instance_of?(HammerCLIForeman::SearchablesOptionBuilder) }
         builder
       end
 
@@ -31,8 +33,8 @@ module HammerCLIForemanSalt
       # remove --new-* and --name commands
       def self.create_option_builder
         builder = super
-        builder.builders.delete_if { |b| b.class == HammerCLIForeman::SearchablesUpdateOptionBuilder }
-        builder.builders.delete_if { |b| b.class == HammerCLIForeman::SearchablesOptionBuilder }
+        builder.builders.delete_if { |b| b.instance_of?(HammerCLIForeman::SearchablesUpdateOptionBuilder) }
+        builder.builders.delete_if { |b| b.instance_of?(HammerCLIForeman::SearchablesOptionBuilder) }
         builder
       end
 
@@ -44,7 +46,3 @@ module HammerCLIForemanSalt
 
   HammerCLI::MainCommand.subcommand 'salt-hostgroup', 'Manage Salt Hostgroups', SaltHostgroup
 end
-
-
-
-
