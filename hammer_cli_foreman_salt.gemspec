@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.5'
 
-  s.add_dependency 'hammer_cli_foreman', '>= 2.0.0', '< 4.0.0'
+  s.add_dependency 'hammer_cli_foreman', '>= 2.0.0', '< 6.0.0'
   s.add_development_dependency 'theforeman-rubocop', '~> 0.1.0'
 end
